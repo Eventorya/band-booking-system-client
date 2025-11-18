@@ -23,10 +23,9 @@ import { useState } from "react";
 
 export default function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   return (
-    <div className="relative bg-white overflow-hidden">
+    <div className="relative bg-white overflow-hidden h-screen">
       <Image
         src={AuthCover}
         className="w-[1537px] h-[1024.79px] left-0 top-[-0.90px] absolute opacity-20 mix-blend-multiply"
@@ -40,33 +39,18 @@ export default function SignUp() {
         alt="Auth Cover Image"
       />
 
-      <div className="flex justify-center items-center min-h-screen w-full">
-        <div className="rounded-2xl flex w-[1000px] shadow-2xl overflow-hidden mb-20 h-[700px]">
+      <div className="flex justify-center items-center h-[calc(100vh-104px)] w-full">
+        <div className="rounded-2xl flex w-[1000px] shadow-2xl overflow-hidden mb-20 h-[500px]">
           <div className="w-[50%]">
-            <Card className=" bg-white backdrop-blur-md shadow-2xl rounded-none h-[700px]">
+            <Card className=" bg-white backdrop-blur-md shadow-2xl rounded-none h-[500px]">
               <CardHeader>
-                <CardTitle className="text-center justify-center text-emerald-800 text-4xl font-bold font-['Montserrat'] mt-4">
+                <CardTitle className="text-center justify-center text-emerald-800 text-4xl font-bold font-['Montserrat'] mt-8">
                   SIGN UP
                 </CardTitle>
               </CardHeader>
               <CardContent className="ml-10 mr-10">
                 <form>
                   <div className="flex flex-col gap-6">
-                    <div className="grid gap-2">
-                      <Label
-                        htmlFor="username"
-                        className="justify-center text-black text-base font-normal font-poppins"
-                      >
-                        Username
-                      </Label>
-                      <Input
-                        id="username"
-                        type="username"
-                        placeholder="Enter your username"
-                        required
-                        className="bg-zinc-100 justify-center text-stone-500 text-xs font-normal font-poppins"
-                      />
-                    </div>
                     <div className="grid gap-2">
                       <Label
                         htmlFor="email"
@@ -111,42 +95,6 @@ export default function SignUp() {
                           )}
                         </button>
                       </div>
-                    </div>
-                    <div className="grid gap-2">
-                      <Label
-                        htmlFor="confirm-password"
-                        className="justify-center text-black text-base font-normal font-poppins"
-                      >
-                        Confirm Password
-                      </Label>
-                      <div className="relative">
-                        <Input
-                          id="confirm-password"
-                          type={showConfirmPassword ? "text" : "password"}
-                          placeholder="Enter your password"
-                          required
-                          className="bg-zinc-100 justify-center text-stone-500 text-xs font-normal font-poppins pr-10"
-                        />
-                        <button
-                          type="button"
-                          className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 hover:text-gray-700"
-                          onClick={() =>
-                            setShowConfirmPassword(!showConfirmPassword)
-                          }
-                        >
-                          {showConfirmPassword ? (
-                            <EyeOff size={16} />
-                          ) : (
-                            <Eye size={16} />
-                          )}
-                        </button>
-                      </div>
-                      <Link
-                        href="#"
-                        className="ml-auto inline-block text-sm underline-offset-4 hover:underline font-poppins mt-1"
-                      >
-                        Forgot your password?
-                      </Link>
                     </div>
                   </div>
                 </form>
